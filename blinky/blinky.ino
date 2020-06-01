@@ -31,7 +31,7 @@ int main (void) {
     ,  "TaskNoop"
     ,  100// This was adjusted according to the Stack Highwater
     ,  NULL
-    ,  0  // Priority
+    ,  3  // Priority
     ,  NULL );
 
     vTaskStartScheduler();
@@ -73,17 +73,17 @@ void TaskNoop(void *pvParameters)  // This is a task.
   {
             /*Set to one the fifth bit of PORTB to one
         **Set to HIGH the pin 13 */
-//        PORTB |= _BV(PORTB5);
-//
-//        /*Wait 3000 ms */
-//        _delay_ms(MS_DELAY);
-//
-//        /*Set to zero the fifth bit of PORTB
-//        **Set to LOW the pin 13 */
-//        PORTB &= ~_BV(PORTB5);
-//
-//        /*Wait 3000 ms */
-//        _delay_ms(MS_DELAY);
+        PORTB |= _BV(PORTB5);
+
+        /*Wait 3000 ms */
+        _delay_ms(500);
+
+        /*Set to zero the fifth bit of PORTB
+        **Set to LOW the pin 13 */
+        PORTB &= ~_BV(PORTB5);
+
+        /*Wait 3000 ms */
+        _delay_ms(500);
     
   }
 }
